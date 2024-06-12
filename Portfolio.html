@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Site with Modal, Dark Mode, Slider, and Tabs</title>
+	<link rel="stylesheet" href="Portfolio.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+			<h1>Многофункциональный сайт</h1>
+			<div class="burger" onclick="toggleMenu()">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="navbar-menu" id="navbarMenu">
+				<a href="#tab-0" onclick="showTab(0)">Главная</a>
+				<a href="#tab-1" onclick="showTab(1)">О нас</a>
+				<a href="#tab-2" onclick="showTab(2)">Услуги</a>
+				<a href="#contact">Контакты</a>
+			</div>
+		</nav>
+	</header>
+	<section class="home" id="home">
+		<div class="home-text">
+			<h5>Hello, I'm Emad,</h5>
+			<h1>Full stack <br> Developer</h1>
+			<div class="social">
+				<a href="#">Follow Me on</a>
+			</div>
+			<div class="button">
+				<a href="#"><i class="ri-mail-open-line"></i>Mail me</a>
+				<a href="#" class="btn2"><i class="ri-arrow-down-line"></i>Download CV</a>
+				<button class="dark-mode-toggle"
+					onclick="document.body.dataset.theme = document.body.dataset.theme === 'dark' ? '' : 'dark'">night</button>
+			</div>
+
+		</div>
+		<div class="home-img">
+			<img src="https://cdn.pixabay.com/photo/2023/02/08/14/02/ai-generated-7776701_960_720.jpg" alt="">
+		</div>
+	</section>
+	<div class="tabs">
+		<div class="tab" onclick="showTab(0)">Вкладка 1</div>
+		<div class="tab" onclick="showTab(1)">Вкладка 2</div>
+		<div class="tab" onclick="showTab(2)">Вкладка 3</div>
+	</div>
+
+	<div id="tab-0" class="tab-content active">
+		<h2>Содержание вкладки 1</h2>
+		<p>Это содержание вкладки 1.</p>
+	</div>
+	<div id="tab-1" class="tab-content">
+		<h2>Содержание вкладки 2</h2>
+		<p>Это содержание вкладки 2.</p>
+	</div>
+	<div id="tab-2" class="tab-content">
+		<h2>Содержание вкладки 3</h2>
+		<p>Это содержание вкладки 3.</p>
+	</div>
+
+	<section class="work" id="work">
+		<div class="center">
+			<div class="h-main">
+				<div class="h-text">
+					<h2>work</h2>
+				</div>
+				<div class="h-button">
+					<a href="#" class="hh-btn">See all<i class="ri-arrow-right-line"></i></a>
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatum odit ipsa, facere labore nemo
+				earum nobis repellendus laborum vero necessitatibus perferendis molestias, sapiente est rerum dolores minus!
+				Nihil, nemo.</p>
+		</div>
+		<div class="work-content">
+			<div class="row">
+				<img src="https://lingkaran.co/blog/wp-content/uploads/2021/09/Banner_Portfolio-01.png" alt="">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>HTML - CSS - JS</h5>
+						<h4>DESIGN PORTFOLIO</h4>
+					</div>
+					<div class="row-icon">
+						<i class="ri-github-fill"></i>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="https://lingkaran.co/blog/wp-content/uploads/2021/09/Banner_Portfolio-01.png" alt="">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>HTML - CSS - JS</h5>
+						<h4>DESIGN PORTFOLIO</h4>
+					</div>
+					<div class="row-icon">
+						<i class="ri-github-fill"></i>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="https://lingkaran.co/blog/wp-content/uploads/2021/09/Banner_Portfolio-01.png" alt="">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>HTML - CSS - JS</h5>
+						<h4>DESIGN PORTFOLIO</h4>
+					</div>
+					<div class="row-icon">
+						<i class="ri-github-fill"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="butt">
+		<button class="btn" onclick="showModal()">Открыть модальное окно</button>
+	</div>
+	<div id="modal" class="modal" onclick="hideModal(event)">
+		<div class="modal-content" onclick="event.stopPropagation()">
+			<h2>Модальное окно</h2>
+			<p>Это модальное окно. Нажмите вне области, чтобы закрыть.</p>
+		</div>
+	</div>
+	<div class="slider">
+		<div class="slides">
+			<div class="slide"><img src="https://via.placeholder.com/600x300" alt="Слайд 1"></div>
+			<div class="slide"><img src="https://via.placeholder.com/600x300" alt="Слайд 2"></div>
+			<div class="slide"><img src="https://via.placeholder.com/600x300" alt="Слайд 3"></div>
+		</div>
+		<div class="slider-controls">
+			<div class="slider-control" onclick="changeSlide(-1)">❮</div>
+			<div class="slider-control" onclick="changeSlide(1)">❯</div>
+		</div>
+	</div>
+
+	<section class="contact" id="contact">
+		<div class="center">
+			<div class="h-main">
+				<div class="h-text">
+					<h2>contact</h2>
+				</div>
+				<div class="h-button">
+					<a href="#" class="hh-btn">Pimg me<i class="ri-arrow-right-line"></i></a>
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatum odit ipsa, facere labore nemo
+				earum nobis repellendus laborum vero necessitatibus perferendis molestias, sapiente est rerum dolores minus!
+				Nihil, nemo.</p>
+		</div>
+		<div class="contact-form" id="contactForm">
+			<form action="">
+				<input id="name" type="text" placeholder="Your name" required>
+				<input id="email" type="text" placeholder="Email address.." required>
+				<textarea id="message" name="" cols="30" rows="10" placeholder="Write a message here..."
+					required></textarea>
+				<input type="submit" name="" value="Send Message" class="send-btn">
+			</form>
+		</div>
+	</section>
+
+	<footer>
+		<div class="main-footer">
+			<h1>Footer</h1>
+			<div class="main-footer-desc">
+				<a href="">home</a>
+				<a href="">product</a>
+				<a href="">console</a>
+				<a href="">settings</a>
+			</div>
+		</div>
+		<div class="footer-boxes">
+			<div class="footer-box">
+				<h1>About us</h1>
+				<div class="info-footer">
+					<a href="">Phone</a>
+					<a href="">Location</a>
+					<a href="">Place</a>
+					<a href="">Network</a>
+				</div>
+			</div>
+			<div class="footer-box">
+				<h1>Help</h1>
+				<div class="info-footer">
+					<a href="">Application</a>
+					<a href="">Design</a>
+					<a href="">Web</a>
+					<a href="">Flutter</a>
+				</div>
+			</div>
+			<div class="footer-box">
+				<h1>Settings</h1>
+				<div class="info-footer">
+					<a href="">Account</a>
+					<a href="">Application</a>
+					<a href="">Personal</a>
+					<a href="">Compony</a>
+				</div>
+			</div>
+			<div class="footer-box">
+				<h1>Portfolio</h1>
+				<div class="info-footer">
+					<a href="">Personal</a>
+					<a href="">Parents</a>
+					<a href="">Friends</a>
+					<a href="">Acc</a>
+				</div>
+			</div>
+		</div>
+		<div class="copy-right">
+			<p>&copy; 2024 Многофункциональный сайт</p>
+		</div>
+	</footer>
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+	<script src="Portfolio.js"></script>
+</body>
+
+</html>
